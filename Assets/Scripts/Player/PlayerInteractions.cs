@@ -5,24 +5,24 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    private IInteractable interaction_target;
+    private IUsable interaction_target;
     
 	// Update is called once per frame
 	void Update () {
 	    if (Input.GetButtonDown("Interact"))
         {
             if(interaction_target)
-                interaction_target.interact();
+                interaction_target.Interaction();
 	    }
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        interaction_target = other.GetComponent<IInteractable>();
+        interaction_target = other.GetComponent<IUsable>();
     }
 
     void OnTriggerExit(Collider other) {
-        IInteractable i = other.GetComponent<IInteractable>();
+        IUsable i = other.GetComponent<IUsable>();
         if (i == interaction_target) interaction_target = null;
     }
 }
