@@ -27,6 +27,7 @@ public class RoomScriptInspector : Editor {
             floor.transform.localPosition = new Vector3(room.width / 2f, 0, room.depth / 2f);
             floor.transform.localScale = new Vector3(room.width, room.depth, 1);
             floor.transform.Rotate(new Vector3(90, 0, 0));
+            DestroyImmediate(floor.GetComponent<Collider>());
 
             // Ceiling
             GameObject ceiling = GameObject.CreatePrimitive(PrimitiveType.Quad);
@@ -35,6 +36,7 @@ public class RoomScriptInspector : Editor {
             ceiling.transform.localPosition = new Vector3(room.width / 2f, room.height, room.depth / 2f);
             ceiling.transform.localScale = new Vector3(room.width, room.depth, 1);
             ceiling.transform.Rotate(new Vector3(-90, 0, 0));
+            DestroyImmediate(ceiling.GetComponent<Collider>());
 
             // BackWall
             GameObject backWall = GameObject.CreatePrimitive(PrimitiveType.Quad);
@@ -42,6 +44,7 @@ public class RoomScriptInspector : Editor {
             backWall.transform.SetParent(walls);
             backWall.transform.localPosition = new Vector3(room.width / 2f, room.height / 2f, room.depth);
             backWall.transform.localScale = new Vector3(room.width, room.height, 1);
+            DestroyImmediate(backWall.GetComponent<Collider>());
 
             // LeftWall
             GameObject leftWall = GameObject.CreatePrimitive(PrimitiveType.Quad);
@@ -50,6 +53,7 @@ public class RoomScriptInspector : Editor {
             leftWall.transform.localPosition = new Vector3(0, room.height / 2f, room.depth / 2f);
             leftWall.transform.localScale = new Vector3(room.depth, room.height, 1);
             leftWall.transform.Rotate(new Vector3(0, -90, 0));
+            DestroyImmediate(leftWall.GetComponent<Collider>());
 
             // RightWall
             GameObject rightWall = GameObject.CreatePrimitive(PrimitiveType.Quad);
@@ -58,6 +62,7 @@ public class RoomScriptInspector : Editor {
             rightWall.transform.localPosition = new Vector3(room.width, room.height / 2f, room.depth / 2f);
             rightWall.transform.localScale = new Vector3(room.depth, room.height, 1);
             rightWall.transform.Rotate(new Vector3(0, 90, 0));
+            DestroyImmediate(rightWall.GetComponent<Collider>());
         }
     }
 }
