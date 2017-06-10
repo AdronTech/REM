@@ -7,11 +7,14 @@ public class LineReader : MonoBehaviour {
 
     public void ReadLine(LineScript ls)
     {
-        if (reader != null)
+        if (ls)
         {
-            StopCoroutine(reader);
+            if (reader != null)
+            {
+                StopCoroutine(reader);
+            }
+            reader = StartCoroutine(read(ls));
         }
-        reader = StartCoroutine(read(ls));
     }
     private Coroutine reader;
 
