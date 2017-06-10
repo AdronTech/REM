@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class IInteractable : MonoBehaviour
 {
-    private GameObject player;
+    protected GameObject player;
 
     public void Start()
     {

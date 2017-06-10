@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float speed = 1;
-    public float collisionBounds;
+    public float collisionBoundsZ;
+    public float collisionBoundsX;
 
-    public SpriteRenderer spriterRenderer;
+    private SpriteRenderer spriterRenderer;
 
     void Start()
     {
@@ -20,16 +21,14 @@ public class PlayerMovement : MonoBehaviour {
         input.Normalize();
         input *= speed*Time.deltaTime;
 
-        Debug.Log(input);      
-
         RoomScript room = GetComponentInParent<RoomScript>();
 
 	    if (input.x != 0)
 	        spriterRenderer.flipX = input.x < 0;
 
         Vector3 new_pos = transform.localPosition + input;
-        new_pos.z = Mathf.Max(0, Mathf.Min(new_pos.z, room.depth));
-        new_pos.x = Mathf.Max(collisionBounds, Mathf.Min(new_pos.x, room.width - collisionBounds));
+        new_pos.z = Mathf.Max(collisionBoundsZ, Mathf.Min(new_pos.z, room.depth - collisionBoundsZ));
+        new_pos.x = Mathf.Max(collisionBoundsX, Mathf.Min(new_pos.x, room.width - collisionBoundsX));
         transform.localPosition = new_pos;
     }
 }
