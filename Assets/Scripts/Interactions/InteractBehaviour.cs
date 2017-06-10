@@ -5,16 +5,28 @@ using UnityEngine;
 
 public class InteractBehaviour : IUsable
 {
-    public LineScript playerComment;
-    public string triggerProgress = "";
+    [SerializeField]
+    private LineScript _playerComment;
+    [SerializeField]
+    private string _triggerProgress = "";
+
+    public LineScript playerComment
+    {
+        set { _playerComment = value; }
+    }
+
+    public string triggerProgress
+    {
+        set { _triggerProgress = value; }
+    }
 
     public override void Interaction()
     {
         Debug.Log("LookAt");
-        FindObjectOfType<LineReader>().ReadLine(playerComment);
-        if (triggerProgress != "")
+        if(_playerComment) FindObjectOfType<LineReader>().ReadLine(_playerComment);
+        if (_triggerProgress != "")
         {
-            FindObjectOfType<ProgressManager>().Trigger(triggerProgress);
+            FindObjectOfType<ProgressManager>().Trigger(_triggerProgress);
         }
     }
 }

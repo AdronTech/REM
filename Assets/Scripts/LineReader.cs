@@ -17,11 +17,10 @@ public class LineReader : MonoBehaviour {
         }
     }
     private Coroutine reader;
-
+    private PlayerMovement movement;
     private AudioSource audio;
     private Canvas canvas;
     private Text bubble;
-    private PlayerMovement movement;
 
     void Start()
     {
