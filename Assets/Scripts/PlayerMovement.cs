@@ -15,8 +15,14 @@ public class PlayerMovement : MonoBehaviour {
         spriterRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-	// Update is called once per frame
-	void Update () {
+    void OnValidate()
+    {
+        Collider collider = GetComponent<Collider>();
+        ((BoxCollider)collider).size = new Vector3(collisionBoundsX, 1, collisionBoundsZ);
+    }
+
+    // Update is called once per frame
+    void Update () {
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         input.Normalize();
         input *= speed*Time.deltaTime;
