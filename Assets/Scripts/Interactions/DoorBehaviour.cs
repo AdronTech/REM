@@ -34,7 +34,7 @@ public class DoorBehaviour : IUsable
     {
         if (_locked)
         {
-            FindObjectOfType<LineReader>().ReadLine(lockedComment);
+            if(lockedComment) FindObjectOfType<LineReader>().ReadLine(lockedComment);
         }
         else UseDoor();
     }
