@@ -5,8 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float speed = 1;
-
     public float collisionBounds;
+
+    public SpriteRenderer spriterRenderer;
+
+    void Start()
+    {
+        spriterRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -17,6 +23,9 @@ public class PlayerMovement : MonoBehaviour {
         Debug.Log(input);      
 
         RoomScript room = GetComponentInParent<RoomScript>();
+
+	    if (input.x != 0)
+	        spriterRenderer.flipX = input.x < 0;
 
         Vector3 new_pos = transform.localPosition + input;
         new_pos.z = Mathf.Max(0, Mathf.Min(new_pos.z, room.depth));
