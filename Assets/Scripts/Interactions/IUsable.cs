@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class IInteractable : MonoBehaviour
+public abstract class IUsable : MonoBehaviour
 {
     protected GameObject player;
 
@@ -10,6 +10,6 @@ public abstract class IInteractable : MonoBehaviour
     {
         player = GameObject.Find("Player");
     }
-
-    public abstract void interact();
+    
+    public abstract void Interaction();
 }
