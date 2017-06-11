@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: start_dream
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 4f68206e6f74207468697320647265616d20616761696e212049206d75737420676f20746f2074686520626173656d656e7420746f2077616b652075702066726f6d20746869732e
+  line: Oh not this dream again! I must go to the basement to wake up from this.
   time: 5
   clip: {fileID: 0}

@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: intro_sink
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 446f6e277420666f7267657420746f207761736820796f75722068616e64732e
+  line: Don't forget to wash your hands.
   time: 0
   clip: {fileID: 0}

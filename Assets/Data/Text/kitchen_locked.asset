@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: kitchen_locked
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 54686520646f6f7220746f20746865206b69746368656e206973206c6f636b65642e
+  line: The door to the kitchen is locked.
   time: 0
   clip: {fileID: 0}

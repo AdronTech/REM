@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: library_clock
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 4e6f206e6f206e6f2e2e2e20746869732074696d65206f6e2074686520636c6f636b20697320656e746972656c792077726f6e672e20492077696c6c206d6f7665207468652068616e647320746f2074686520636f72726563742074696d652e
+  line: No no no... this time on the clock is entirely wrong. I will move the hands
+    to the correct time.
   time: 4
   clip: {fileID: 0}

@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: study_locked
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 54686520646f6f7220746f206d79207374756479206973206c6f636b65642e
+  line: The door to my study is locked.
   time: 0
   clip: {fileID: 0}

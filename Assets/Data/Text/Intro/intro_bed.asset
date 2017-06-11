@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: intro_bed
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 4920686f7065206e6f7720492063616e2066696e616c6c7920736c6565702e
+  line: I hope now I can finally sleep.
   time: 0
   clip: {fileID: 0}

@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: library_chair
   m_EditorClassIdentifier: Assembly-CSharp::LineScript
-  line: 4d616e7920686f75727320686176652049207361742075706f6e2074686973206f6c642063686169722e
+  line: Many hours have I sat upon this old chair.
   time: 0
   clip: {fileID: 0}
