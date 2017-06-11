@@ -34,8 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
         RoomScript room = GetComponentInParent<RoomScript>();
 
-        animator.SetBool("Moving", input.sqrMagnitude != 0);
-
         if (input.x != 0)
             spriterRenderer.flipX = input.x < 0;
 
@@ -43,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
         new_pos.z = Mathf.Max(collisionBoundsZ, Mathf.Min(new_pos.z, room.depth - collisionBoundsZ));
         new_pos.x = Mathf.Max(collisionBoundsX, Mathf.Min(new_pos.x, room.width - collisionBoundsX));
         transform.localPosition = new_pos;
+
+//        if (Input.GetKeyDown("space"))
+//        {
+//            GetComponent<DreamTransition>()
+//                .Transition(GameObject.Find("Library").GetComponent<RoomScript>(), new Vector3(2.5f, 0, 1f));
+//        }
     }
 
 }

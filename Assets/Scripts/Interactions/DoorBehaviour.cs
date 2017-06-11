@@ -73,6 +73,10 @@ public class DoorBehaviour : IUsable
             _linkedDoor._linkedDoor = this;
 
         RoomScript otherRoom = _linkedDoor.GetComponentInParent<RoomScript>();
+
+        foreach (Renderer renderer in otherRoom.GetComponentsInChildren<Renderer>())
+            renderer.enabled = true;
+
         player.transform.SetParent(otherRoom.transform);
 
         player.transform.localPosition = _linkedDoor.transform.localPosition;
@@ -124,5 +128,25 @@ public class DoorBehaviour : IUsable
 
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerInteractions>().enabled = true;
+
+        RoomScript oldRoom;
+        RoomScript newRoom;
+
+        if (frontDoor)
+        {
+            oldRoom = frontRoom;
+            newRoom = back.GetComponentInParent<RoomScript>();
+        }
+        else
+        {
+            oldRoom = back.GetComponentInParent<RoomScript>();
+            newRoom = frontRoom;
+        }
+
+        if (newRoom != GetComponentInParent<RoomScript>())
+        {
+            foreach (Renderer renderer in oldRoom.GetComponentsInChildren<Renderer>())
+                renderer.enabled = false;
+        }
     }
 }
