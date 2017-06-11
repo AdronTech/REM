@@ -34,7 +34,7 @@ public class LineReader : MonoBehaviour {
     {
         canvas.enabled = true;
         movement.enabled = false;
-        float waittime = 2f;
+		float waittime = (ls.time == 0f)?2f:ls.time;
         bubble.text = ls.line;
 
         if (ls.clip)
