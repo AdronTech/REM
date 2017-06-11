@@ -10,30 +10,35 @@ public class DoorBehaviour : IUsable
     public bool locked
     {
         set { _locked = value; }
+		get { return _locked; }
     }
     [SerializeField]
     private LineScript _lockedComment;
     public LineScript lockedComment
     {
         set { _lockedComment = value; }
+		get { return _lockedComment; }
     }
     [SerializeField]
     private DoorBehaviour _linkedDoor;
     public DoorBehaviour linkedDoor
     {
         set { _linkedDoor = value; }
-    }
+		get { return _linkedDoor; }
+	}
     [SerializeField]
     private bool _autoLinkBack;
     private bool autoLinkBack
     {
         set { _autoLinkBack = value; }
+		get { return _autoLinkBack; }
     }
     [SerializeField]
     private bool _frontDoor;
     private bool frontDoor
     {
         set { _frontDoor = value; }
+		get { return _frontDoor; }
     }
 
     private TweenBehaviour tweenBehaviour;
