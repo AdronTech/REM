@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(RoomScript))]
-public class RoomScriptInspector : Editor {
+public class StairScriptInspector : Editor {
 
     public override void OnInspectorGUI()
     {
@@ -63,6 +63,9 @@ public class RoomScriptInspector : Editor {
             rightWall.transform.localScale = new Vector3(room.depth, room.height, 1);
             rightWall.transform.Rotate(new Vector3(0, 90, 0));
             DestroyImmediate(rightWall.GetComponent<Collider>());
+
+            room.heights = AnimationCurve.Linear(0f, 0f, room.width, 0f);
         }
+    
     }
 }

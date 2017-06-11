@@ -8,6 +8,6 @@ public class RoomScript : MonoBehaviour {
     public float depth = 2.0f;
     public float height = 5.0f;
 
-    
+    public AnimationCurve heights;
 
 }
