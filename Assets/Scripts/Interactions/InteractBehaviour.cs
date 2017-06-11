@@ -9,6 +9,8 @@ public class InteractBehaviour : IUsable
     private LineScript _playerComment;
     [SerializeField]
     private string _triggerProgress = "";
+    [SerializeField]
+    private AudioClip _sound;
 
     public LineScript playerComment
     {
@@ -20,9 +22,14 @@ public class InteractBehaviour : IUsable
         set { _triggerProgress = value; }
     }
 
+    public AudioClip sound
+    {
+        set { _sound = value; }
+    }
+
     public override void Interaction()
     {
-        Debug.Log("LookAt");
+        if (_sound) FindObjectOfType<InteractionSoundPlayer>().PlaySound(_sound);
         if(_playerComment) FindObjectOfType<LineReader>().ReadLine(_playerComment);
         if (_triggerProgress != "")
         {
