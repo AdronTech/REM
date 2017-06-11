@@ -10,11 +10,36 @@ public class DoorBehaviour : IUsable
     public bool locked
     {
         set { _locked = value; }
+		get { return _locked; }
     }
-    public LineScript lockedComment;
-    public DoorBehaviour linkedDoor;
-    public bool autoLinkBack;
-    public bool frontDoor;
+    [SerializeField]
+    private LineScript _lockedComment;
+    public LineScript lockedComment
+    {
+        set { _lockedComment = value; }
+		get { return _lockedComment; }
+    }
+    [SerializeField]
+    private DoorBehaviour _linkedDoor;
+    public DoorBehaviour linkedDoor
+    {
+        set { _linkedDoor = value; }
+		get { return _linkedDoor; }
+	}
+    [SerializeField]
+    private bool _autoLinkBack;
+    private bool autoLinkBack
+    {
+        set { _autoLinkBack = value; }
+		get { return _autoLinkBack; }
+    }
+    [SerializeField]
+    private bool _frontDoor;
+    private bool frontDoor
+    {
+        set { _frontDoor = value; }
+		get { return _frontDoor; }
+    }
 
     private TweenBehaviour tweenBehaviour;
     private GameObject main_camera;
@@ -34,29 +59,29 @@ public class DoorBehaviour : IUsable
     {
         if (_locked)
         {
-            if(lockedComment) FindObjectOfType<LineReader>().ReadLine(lockedComment);
+            if(_lockedComment) FindObjectOfType<LineReader>().ReadLine(_lockedComment);
         }
         else UseDoor();
     }
 
     private void UseDoor()
     {
-        if (!linkedDoor)
+        if (!_linkedDoor)
             return;
 
-        if (autoLinkBack)
-            linkedDoor.linkedDoor = this;
+        if (_autoLinkBack)
+            _linkedDoor._linkedDoor = this;
 
-        RoomScript otherRoom = linkedDoor.GetComponentInParent<RoomScript>();
+        RoomScript otherRoom = _linkedDoor.GetComponentInParent<RoomScript>();
         player.transform.SetParent(otherRoom.transform);
 
-        player.transform.localPosition = linkedDoor.transform.localPosition;
+        player.transform.localPosition = _linkedDoor.transform.localPosition;
         player.GetComponent<PlayerMovement>().Update();
 
-        if (frontDoor)
-            StartCoroutine(Tweening(this, linkedDoor));
+        if (_frontDoor)
+            StartCoroutine(Tweening(this, _linkedDoor));
         else
-            StartCoroutine(Tweening(linkedDoor, this));
+            StartCoroutine(Tweening(_linkedDoor, this));
 
 
     }
