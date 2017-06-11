@@ -10,16 +10,19 @@ public class DreamTransition : MonoBehaviour
     private CameraBehaviour main_camera;
     private TweenBehaviour tweenBehaviour;
 
+	public RoomScript targetRoom;
+	public Vector3 localPosition;
+
 	void Start () {
         player = GameObject.Find("Player");
         main_camera = GameObject.Find("Main Camera").GetComponent<CameraBehaviour>();
 	    tweenBehaviour = main_camera.GetComponent<TweenBehaviour>();
 	}
 
-    public void Transition(RoomScript targetRoom, Vector3 localPosition)
-    {
-        StartCoroutine(TransitionCoroutine(targetRoom, localPosition));
-    }
+	public void Transition()
+	{
+		StartCoroutine(TransitionCoroutine(targetRoom, localPosition));
+	}
 
     IEnumerator TransitionCoroutine(RoomScript targetRoom, Vector3 localPosition)
     {

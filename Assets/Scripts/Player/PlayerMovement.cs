@@ -40,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 new_pos = transform.localPosition + input;
         new_pos.z = Mathf.Max(collisionBoundsZ, Mathf.Min(new_pos.z, room.depth - collisionBoundsZ));
         new_pos.x = Mathf.Max(collisionBoundsX, Mathf.Min(new_pos.x, room.width - collisionBoundsX));
+
+        if (room.heights != null)
+            new_pos.y = room.heights.Evaluate(new_pos.x);
+
         transform.localPosition = new_pos;
 
 //        if (Input.GetKeyDown("space"))
