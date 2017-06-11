@@ -1,7 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2a012be7ebd13194b841453747e9858d
 folderAsset: yes
 timeCreated: 1497171790
+=======
+<<<<<<< HEAD
+guid: afdf881155d0bb5499ad5417fad360a7
+folderAsset: yes
+timeCreated: 1497172526
+=======
+guid: f05081ef36a43fe4782c8c48dcf1e9ff
+folderAsset: yes
+timeCreated: 1497172562
+>>>>>>> a6c5b903fc401179b48a4dc82710ee41e4357ee9
+>>>>>>> d063c7d1e0f72e7d03b84ac697905e6045861007
 licenseType: Free
 DefaultImporter:
   userData: 
