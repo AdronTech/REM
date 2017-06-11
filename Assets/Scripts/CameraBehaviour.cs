@@ -40,7 +40,7 @@ public class CameraBehaviour : MonoBehaviour {
 
         float boundOffset = offset.y * cam.aspect;
         float boundL = room.transform.position.x + boundOffset, boundR = room.transform.position.x + room.width - boundOffset; // set propper values
-        transform.position = new Vector3(Mathf.Max(boundL, Mathf.Min(target.transform.position.x, boundR)), target.transform.position.y, room.transform.position.z) + offset;
+        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, room.transform.position.z) + offset; //new Vector3(Mathf.Max(boundL, Mathf.Min(target.transform.position.x, boundR)), target.transform.position.y, room.transform.position.z) + offset;
     }
    
 }

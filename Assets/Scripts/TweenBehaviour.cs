@@ -23,10 +23,10 @@ public class TweenBehaviour : MonoBehaviour {
         GameObject.Find("Camera").GetComponent<Camera>().targetTexture = renderTexture;
     }
 
-    public void OnValidate()
-    {
-        SetAlpha(alpha);
-    }
+//    public void OnValidate()
+//    {
+//        SetAlpha(alpha);
+//    }
 
     public void SetAlpha(float _alpha)
     {
