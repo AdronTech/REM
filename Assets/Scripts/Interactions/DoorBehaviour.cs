@@ -130,13 +130,20 @@ public class DoorBehaviour : IUsable
         player.GetComponent<PlayerInteractions>().enabled = true;
 
         RoomScript oldRoom;
+        RoomScript newRoom;
 
         if (frontDoor)
+        {
             oldRoom = frontRoom;
+            newRoom = back.GetComponentInParent<RoomScript>();
+        }
         else
+        {
             oldRoom = back.GetComponentInParent<RoomScript>();
+            newRoom = frontRoom;
+        }
 
-        if (oldRoom != GetComponentInParent<RoomScript>())
+        if (newRoom != GetComponentInParent<RoomScript>())
         {
             foreach (Renderer renderer in oldRoom.GetComponentsInChildren<Renderer>())
                 renderer.enabled = false;
