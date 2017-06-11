@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float speed = 1;
+    public float speed = 0.75f;
     public float collisionBoundsZ;
     public float collisionBoundsX;
 
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public void Update()
     {
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        animator.SetBool("Moving", input.sqrMagnitude > 0);
         input.Normalize();
         input *= speed * Time.deltaTime;
 
